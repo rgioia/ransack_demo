@@ -1,0 +1,67 @@
+
+<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+  <a class="navbar-brand mr-1" href="#0">Ransack Demo</a>
+</nav>
+
+<div id="wrapper">
+
+  <!-- Sidebar -->
+
+  <div id="content-wrapper">
+
+    <div class="container-fluid">
+
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#0">Produtos</a>
+        </li>
+        <li class="breadcrumb-item active">Listar</li>
+      </ol>
+
+      <!-- DataTables Example -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fas fa-table"></i>
+          Produtos
+        </div>
+        <div class="card-body">
+          <%= render 'filters' %>
+
+          <hr/>
+
+          <%= @products.to_sql %>
+
+          <hr/>
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th><%= sort_link(@search, :name) %></th>
+                  <th><%= sort_link(@search, :description) %></th>
+                  <th><%= sort_link(@search, :brand) %></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @products.each do |product| %>
+                  <tr>
+                    <td><%= product.name %></td>
+                    <td><%= product.description %></td>
+                    <td><%= product.brand %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.container-fluid -->
+
+
+
+  </div>
+  <!-- /.content-wrapper -->
+
+</div>
+<!-- /#wrapper -->

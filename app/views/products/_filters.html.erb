@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-sm-12 col-md-12">
+    <%= search_form_for @search do |f| %>
+      <div class="row">
+
+        <div class="col-sm-3">
+          <%= f.label :name_cont %>
+          <%= f.text_field :name_cont, class: 'form-control' %>
+        </div>
+
+        <div class="col-sm-3">
+          <%= f.label :description_cont %>
+          <%= f.text_field :description_cont, class: 'form-control' %>
+        </div>
+
+        <div class="col-sm-3">
+          <%= f.label :brand_cont %>
+          <%= f.text_field :brand_cont, class: 'form-control' %>
+        </div>
+      </div>
+
+      <br/>
+
+      <div class="row">
+        <div class="col-sm-3">
+          <%= submit_tag 'Filtrar', class: 'btn btn-primary', data: { disable_with: 'Filtrando...'} %>
+          <%= link_to 'Limpar', request.path, class: 'btn btn-default', data: { turbolinks: false } %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
