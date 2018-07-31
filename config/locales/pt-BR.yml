@@ -6,6 +6,7 @@ pt-BR:
         name: Nome
         brand: Marca
         description: Descrição
+        quantity: Quantidade
     models:
       product: Produto
     errors:
